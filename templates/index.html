@@ -1,132 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 
- 
 {% include 'header.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+
 <body>
   <section id="snippet-3" class="wrapper bg-light wrapper-border">
       <div class="container pt-5 pb-13">
 
         <h2 class="display-4 mb-3 text-center">CrepyGato</h2>
-        <p class="lead text-center mb-10 px-md-16 px-lg-0">Destapa cada una de las cartas evitando toparte con el CrepyGato o perderás.</p>
-          <h3 class="text-center mb-4">Intentos: <span id="contador-intentos">1</span></h3>
-        <div style="text-align:center; margin-bottom:30px;">
-              <button id="restartBtn" class="btn btn-info" style="font-size:18px; padding:8px 20px;">
-                Reiniciar partida
-              </button>
-            </div>
+        <p class="lead text-center mb-10 px-md-16 px-lg-0">Destapa las cartas... si te atreves. Evita al CrepyGato o tu alma será suya.</p>
         
-
-        <div class="row row-cols-2 row-cols-md-3 row-cols-xl-5 gx-lg-6 gy-6 justify-content-center">
-            <div class="col">
-              <div class="cheems-card shadow-lg h-100 align-items-center">
-                <div class="card-body align-items-center d-flex px-3 p-0">
-                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="Cheems con dudas" data-id="1" />
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="cheems-card card shadow-lg h-100 align-items-center">
-                <div class="card-body align-items-center d-flex px-3 p-0">
-                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="Cheems con dudas"data-id="2" />
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="cheems-card card shadow-lg h-100 align-items-center">
-                <div class="card-body align-items-center d-flex px-3 p-0">
-                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="Cheems con dudas" data-id="3"/>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="cheems-card card shadow-lg h-100 align-items-center">
-                <div class="card-body align-items-center d-flex px-3 p-0">
-                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="Cheems con dudas"data-id="4" />
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="cheems-card card shadow-lg h-100 align-items-center">
-                <div class="card-body align-items-center d-flex px-3 p-0">
-                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="Cheems con dudas"data-id="5" />
-                </div>
-              </div>
-            </div>
+        <h3 class="text-center mb-4">Intentos: <span id="contador-intentos">1</span></h3>
+        
+        <div style="text-align:center; margin-bottom:40px;">
+              <button id="restartBtn" class="btn" style="font-size:18px; padding:10px 30px;">
+                Reiniciar Pesadilla
+              </button>
         </div>
+        
+        <div class="row row-cols-2 row-cols-md-3 row-cols-xl-5 gx-4 gy-4 justify-content-center">
+            
+            <div class="col">
+              <div class="cheems-card h-100"> <div class="card-body p-0">
+                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="?" data-id="1" />
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="cheems-card h-100">
+                <div class="card-body p-0">
+                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="?" data-id="2" />
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="cheems-card h-100">
+                <div class="card-body p-0">
+                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="?" data-id="3"/>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="cheems-card h-100">
+                <div class="card-body p-0">
+                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="?" data-id="4" />
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="cheems-card h-100">
+                <div class="card-body p-0">
+                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="?" data-id="5" />
+                </div>
+              </div>
+            </div>
 
-
-        <div class="row row-cols-2 row-cols-md-3 row-cols-xl-5 gx-lg-6 gy-6 justify-content-center pt-5">
             <div class="col">
-              <div class="cheems-card card shadow-lg h-100 align-items-center">
-                <div class="card-body align-items-center d-flex px-3 p-0">
-                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="Cheems con dudas" data-id="6"/>
+              <div class="cheems-card h-100">
+                <div class="card-body p-0">
+                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="?" data-id="6"/>
                 </div>
               </div>
             </div>
             <div class="col">
-              <div class="cheems-card card shadow-lg h-100 align-items-center">
-                <div class="card-body align-items-center d-flex px-3 p-0">
-                <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="Cheems con dudas" data-id="7"/>
+              <div class="cheems-card h-100">
+                <div class="card-body p-0">
+                <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="?" data-id="7"/>
                 </div>
               </div>
             </div>
             <div class="col">
-              <div class="cheems-card card shadow-lg h-100 align-items-center">
-                <div class="card-body align-items-center d-flex px-3 p-0">
-                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="Cheems con dudas" data-id="8" />
+              <div class="cheems-card h-100">
+                <div class="card-body p-0">
+                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="?" data-id="8" />
                 </div>
               </div>
             </div>
             <div class="col">
-              <div class="cheems-card card shadow-lg h-100 align-items-center">
-                <div class="card-body align-items-center d-flex px-3 p-0">
-                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="Cheems con dudas" data-id="9"/>
+              <div class="cheems-card h-100">
+                <div class="card-body p-0">
+                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="?" data-id="9"/>
                 </div>
               </div>
             </div> 
             <div class="col">
-              <div class="cheems-card card shadow-lg h-100 align-items-center">
-                <div class="card-body align-items-center d-flex px-3 p-0">
-                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="Cheems con dudas" data-id="10"/>
+              <div class="cheems-card h-100">
+                <div class="card-body p-0">
+                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="?" data-id="10"/>
                 </div>
               </div>
             </div>
-        </div>
 
-        <div class="row row-cols-2 row-cols-md-3 row-cols-xl-5 gx-lg-6 gy-6 justify-content-center pt-5">
             <div class="col">
-              <div class="cheems-card card shadow-lg h-100 align-items-center">
-                <div class="card-body align-items-center d-flex px-3 p-0">
-                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="Cheems con dudas" data-id="11"/>
+              <div class="cheems-card h-100">
+                <div class="card-body p-0">
+                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="?" data-id="11"/>
                 </div>
               </div>
             </div>
             <div class="col">
-              <div class="cheems-card card shadow-lg h-100 align-items-center">
-                <div class="card-body align-items-center d-flex px-3 p-0">
-                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="Cheems con dudas" data-id="12" />
+              <div class="cheems-card h-100">
+                <div class="card-body p-0">
+                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="?" data-id="12" />
                 </div>
               </div>
             </div>
             <div class="col">
-              <div class="cheems-card card shadow-lg h-100 align-items-center">
-                <div class="card-body align-items-center d-flex px-3 p-0">
-                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="Cheems con dudas" data-id="13"/>
+              <div class="cheems-card h-100">
+                <div class="card-body p-0">
+                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="?" data-id="13"/>
                 </div>
               </div>
             </div>
             <div class="col">
-              <div class="cheems-card card shadow-lg h-100 align-items-center">
-                <div class="card-body align-items-center d-flex px-3 p-0">
-                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="Cheems con dudas" data-id="14"/>
+              <div class="cheems-card h-100">
+                <div class="card-body p-0">
+                 <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="?" data-id="14"/>
                 </div>
               </div>
             </div> 
             <div class="col">
-              <div class="cheems-card card shadow-lg h-100 align-items-center">
-                <div class="card-body align-items-center d-flex px-3 p-0">
-                  <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="Cheems con dudas" data-id="15" />
+              <div class="cheems-card h-100">
+                <div class="card-body p-0">
+                  <img src="{{ url_for('static', filename='images/cheems_question.png') }}" alt="?" data-id="15" />
                 </div>
               </div>
             </div>
@@ -139,26 +137,29 @@
  <div class="modal fade" id="modal-winner" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered modal-sm">
     <div class="modal-content text-center">
-      <div class="modal-body">
-        <h2 class="mb-3 text-start">¡Ganaste!</h2>
-        <p class="lead mb-6 text-start">Registra tus datos para inscribirte en la lista de ganadores</p>
+      <div class="modal-body p-4">
+        <h2 class="mb-3 text-start">¡Sobreviviste!</h2>
+        <p class="lead mb-4 text-start" style="font-size: 0.9rem;">El CrepyGato te perdona la vida... por ahora. Regístrate en la eternidad.</p>
         
-          <div class="form-floating mb-4">
+          <div class="form-floating mb-3">
             <input type="text" class="form-control" placeholder="name" id="name">
-            <label>Nombre</label>
+            <label>Nombre de la Víctima</label>
           </div>
-          <div class="form-floating mb-4">
+          <div class="form-floating mb-3">
             <input type="email" class="form-control" placeholder="email" id="email">
-            <label>Correo</label>
+            <label>Correo Electrónico</label>
           </div>
           <div class="form-floating mb-4">
             <input type="text" class="form-control" placeholder="phrase" id="phrase">
-            <label>Frase</label>
+            <label>Últimas Palabras (Frase)</label>
           </div>
-          <a class="btn btn-primary rounded-pill btn-login w-100 mb-2" id="btn-set">Guardar</a>
+          <a class="btn w-100 mb-2" id="btn-set">GRABAR DESTINO</a>
          
       </div> 
     </div> 
   </div> 
 </div>
+
 {% include 'footer.html' %}
+</body>
+</html>

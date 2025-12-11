@@ -1,0 +1,171 @@
+:root {
+  /* --- Paleta CrepyGato --- */
+  --bg-body: #050505;
+  --bg-card: #111;
+  --text-main: #e0e0e0;
+  
+  --neon-green: #39ff14;   /* Ojos de gato */
+  --neon-purple: #9d00ff;  /* Misterio */
+  --blood-red: #ff003c;    /* Peligro */
+  
+  --font-mono: 'Courier New', Courier, monospace;
+}
+
+/* --- Override General --- */
+body, 
+.wrapper, 
+.wrapper.bg-light {
+  background-color: var(--bg-body) !important;
+  color: var(--text-main) !important;
+  font-family: var(--font-mono);
+}
+
+.wrapper-border {
+  border-bottom: 1px solid #222 !important;
+}
+
+/* --- Títulos y Textos --- */
+h2.display-4 {
+  color: var(--neon-green);
+  text-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+.lead {
+  color: #888 !important;
+  font-size: 1.1rem;
+}
+
+h3 {
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid var(--neon-purple);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+#contador-intentos {
+  color: var(--neon-purple);
+  font-weight: bold;
+  font-size: 1.5em;
+  text-shadow: 0 0 10px var(--neon-purple);
+}
+
+/* --- Botón de Reinicio --- */
+#restartBtn {
+  background-color: transparent;
+  border: 2px solid var(--blood-red);
+  color: var(--blood-red);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 0, 60, 0.2);
+  transition: all 0.3s ease;
+}
+
+#restartBtn:hover {
+  background-color: var(--blood-red);
+  color: #000;
+  box-shadow: 0 0 20px var(--blood-red);
+}
+
+
+.cheems-card {
+  background-color: #000;
+  border: 1px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+  position: relative;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🐾</text></svg>") 16 0, auto; /* Cursor de garra opcional */
+}
+
+
+.cheems-card .card-body {
+  background: none;
+  padding: 0 !important; 
+  min-height: auto;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.cheems-card img {
+  filter: grayscale(100%) contrast(1.2); 
+  transition: all 0.4s ease;
+  width: 100%;
+  opacity: 0.7;
+}
+
+
+.cheems-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: var(--neon-purple);
+  box-shadow: 0 0 25px rgba(157, 0, 255, 0.3);
+  z-index: 10;
+}
+
+.cheems-card:hover img {
+  filter: grayscale(0%); 
+  opacity: 1;
+  transform: none;
+}
+
+
+.modal-content {
+  background-color: #000;
+  border: 1px solid var(--neon-green);
+  box-shadow: 0 0 50px rgba(57, 255, 20, 0.2);
+  color: var(--text-main);
+  font-family: var(--font-mono);
+}
+
+.modal-body h2 {
+  color: var(--neon-green);
+  text-shadow: 2px 2px 0 #000, -1px -1px 0 var(--neon-green);
+  text-transform: uppercase;
+}
+
+.modal-body p {
+  color: #aaa;
+}
+
+/* Inputs del Modal */
+.form-floating .form-control {
+  background-color: #111;
+  border: 1px solid #333;
+  color: var(--neon-green);
+  font-family: monospace;
+}
+
+.form-floating .form-control:focus {
+  background-color: #000;
+  border-color: var(--neon-green);
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+  color: #fff;
+}
+
+.form-floating label {
+  color: #666;
+}
+
+/* Botón Guardar en Modal */
+#btn-set {
+  background-color: var(--neon-green);
+  border: none;
+  color: #000;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+}
+
+#btn-set:hover {
+  background-color: #fff;
+  box-shadow: 0 0 30px rgba(57, 255, 20, 0.8);
+  transform: scale(1.05);
+}

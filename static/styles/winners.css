@@ -1,198 +1,192 @@
 :root {
-  /* --- Paleta Cyberpunk  */
-  --bg-body: #050505;          
-  --bg-card: #111111;          
-  --text-main: #e0e0e0;        
-  --text-muted: #888888;
+  /* --- Paleta CrepyGato --- */
+  --bg-body: #050505;           
+  --bg-card: #0f0f0f;           
+  --text-main: #e0e0e0;         
+  --text-muted: #666666;        
   
-  --neon-blue: #00f3ff;        
-  --neon-red: #ff0055;         /
+  /* Colores de acento */
+  --creepy-purple: #9d00ff;    
+  --cat-eye-green: #39ff14;     
+  --blood-red: #ff003c;        
+  
   --border-color: #333;
-  
-  --sombra-neon-blue: 0 0 10px rgba(0, 243, 255, 0.5);
-  --sombra-neon-red: 0 0 10px rgba(255, 0, 85, 0.5);
+  --font-mono: 'Courier New', Courier, monospace; 
 }
 
-/* Fondo general de la página para esta sección */
-body, .content-wrapper, .wrapper.bg-light {
+
+body, 
+html, 
+.content-wrapper, 
+.wrapper, 
+.wrapper.bg-light {
   background-color: var(--bg-body) !important;
-  color: var(--text-main);
+  color: var(--text-main) !important;
 }
 
-/* --- Título con efecto Glitch --- */
-.glitch-title {
-  font-family: 'Courier New', Courier, monospace; 
-  font-weight: 800;
-  color: var(--text-main);
-  position: relative;
+/* --- Título Principal --- */
+.display-4 {
+  font-family: var(--font-mono);
+  font-weight: 900;
+  color: var(--cat-eye-green);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  text-shadow: 2px 2px 0px var(--neon-red), -2px -2px 0px var(--neon-blue);
+  letter-spacing: -2px;
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
 }
 
-/* --- Tarjeta Estilo Terminal --- */
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* --- Tarjeta del Salón de la Fama --- */
 .winners-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-left: 4px solid var(--neon-blue); 
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-  border-radius: 4px;
+  /* Borde superior morado brillante */
+  border-top: 3px solid var(--creepy-purple); 
+  /* Sombra difusa morada */
+  box-shadow: 0 0 30px rgba(157, 0, 255, 0.15); 
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
 }
 
-/* --- Tabla Oscura --- */
+/* Efecto de arañazo (decorativo) antes de la tarjeta */
+.winners-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--creepy-purple), var(--cat-eye-green));
+  opacity: 0.5;
+}
+
+/* --- ESTILO DE LA TABLA --- */
 .custom-table {
   width: 100%;
-  border-collapse: separate; 
-  border-spacing: 0;
+  border-collapse: collapse; 
   color: var(--text-main);
+  font-family: var(--font-mono);
 }
 
 .custom-table th {
   background-color: #000;
-  color: var(--neon-blue);
-  font-family: 'Courier New', Courier, monospace;
+  color: var(--creepy-purple);
   text-transform: uppercase;
-  font-size: 0.9rem;
-  padding: 1.2rem;
-  border-bottom: 2px solid var(--neon-blue);
-  letter-spacing: 1px;
+  font-size: 0.85rem;
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
 .custom-table td {
-  padding: 1rem 1.2rem;
-  border-bottom: 1px solid #222;
+  padding: 1.2rem 1rem;
+  border-bottom: 1px solid #1a1a1a; /* Líneas muy sutiles */
   vertical-align: middle;
 }
 
-/* Filas */
+/* Efecto Hover en las filas (El "Ojo del Gato" te mira) */
 .custom-table tbody tr {
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .custom-table tbody tr:hover {
-  background-color: rgba(0, 243, 255, 0.05); 
-  transform: scale(1.03); 
-  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-  position: relative;
-  z-index: 10;
+  background-color: rgba(57, 255, 20, 0.05); /* Sutil fondo verde */
+  box-shadow: inset 3px 0 0 var(--cat-eye-green); /* Borde izquierdo verde al pasar el mouse */
 }
 
-/* Colores de texto específicos */
+/* --- Tipografía de las celdas --- */
 .winner-name {
   font-weight: bold;
-  color: #fff;
   font-size: 1.1rem;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(255,255,255,0.2);
 }
 
 .winner-email {
   color: var(--text-muted);
-  font-family: monospace;
+  font-size: 0.9rem;
 }
 
 .winner-phrase {
-  color: var(--neon-red); /* Frase en rojo neón */
+  color: var(--cat-eye-green); 
   font-style: italic;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-/* Badge de intentos estilo 'Chip' */
-.attempts-badge {
-  background: transparent;
-  color: var(--neon-blue);
-  border: 1px solid var(--neon-blue);
-  padding: 0.2em 0.8em;
-  font-family: monospace;
-  box-shadow: var(--sombra-neon-blue);
-  text-shadow: 0 0 5px var(--neon-blue);
+  opacity: 0.9;
 }
 
 .winner-date {
   color: var(--text-muted);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* --- Estado Vacío --- */
+/* --- Badge de Intentos (Estilo Píldora Oscura) --- */
+.attempts-badge {
+  background: #1a1a1a;
+  color: var(--creepy-purple);
+  border: 1px solid var(--creepy-purple);
+  padding: 0.3em 0.9em;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 0 5px rgba(157, 0, 255, 0.2);
+}
+
+/* --- Estado Vacío (Sin ganadores) --- */
 .empty-state {
-  padding: 4rem;
-  color: var(--text-muted);
-  border: 1px dashed #333;
+  padding: 5rem 2rem;
+  text-align: center;
+  border: 2px dashed #222;
   margin: 2rem;
-}
-.empty-state i {
-  font-size: 3rem;
-  color: var(--neon-red);
-  margin-bottom: 1rem;
-  display: block;
-  text-shadow: var(--sombra-neon-red);
+  border-radius: 8px;
+  background-color: rgba(0,0,0,0.3);
 }
 
-/* Botón Glitch */
-.btn-glitch {
-  background-color: var(--neon-red);
-  color: #fff;
-  border: none;
-  font-family: monospace;
+.empty-state i {
+  font-style: normal;
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1rem;
+  filter: grayscale(100%) brightness(0.7); /* Icono apagado */
+}
+
+.empty-state h4 {
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+/* --- Botón Jugar (Estilo Ojo de Gato) --- */
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+  background-color: transparent !important;
+  border: 1px solid var(--cat-eye-green) !important;
+  color: var(--cat-eye-green) !important;
+  font-family: var(--font-mono);
   text-transform: uppercase;
   font-weight: bold;
-  padding: 10px 25px;
-  box-shadow: var(--sombra-neon-red);
-  transition: 0.3s;
-}
-.btn-glitch:hover {
-  background-color: #d00045;
-  color: #fff;
-  box-shadow: 0 0 20px var(--neon-red);
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.1);
+  transition: all 0.3s;
 }
 
-
-.wrapper-border {
-  border-bottom: 1px solid #111 !important;
+.btn-primary:hover {
+  background-color: var(--cat-eye-green) !important;
+  color: #000 !important; /* Texto negro sobre fondo verde */
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
 }
 
-body {
-  overflow-x: hidden;
-}
-
-
-
-/* Ancho de la barra */
+/* --- Scrollbar Personalizado (Estilo Minimalista Oscuro) --- */
 ::-webkit-scrollbar {
-  width: 8px;      
-  height: 8px;     
+  width: 10px;
 }
-
-
 ::-webkit-scrollbar-track {
-  background: #050505; 
-
-
+  background: #000;
+}
 ::-webkit-scrollbar-thumb {
-  background: #333; 
-  border-radius: 4px;
+  background: #333;
+  border: 1px solid #000;
 }
-
-
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--neon-red); 
-  box-shadow: 0 0 10px var(--neon-red);
-  cursor: pointer;
-}
-
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #333 #050505;
-}
-
-/
-.table-responsive {
-  overflow-x: auto; 
-  overflow-y: hidden; /
-  padding-bottom: 5px; 
-}
-
-.table-responsive::-webkit-scrollbar {
-  height: 0px; 
-  background: transparent; 
+  background: var(--creepy-purple);
 }

@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
 
                 img.src = window.IMG_BAD;
-                alert("¡Perdiste! Has pulsado la imagen incorrecta.");
+                //alert("¡Perdiste! Has pulsado la imagen incorrecta.");
             } else {
                 img.src = window.IMG_OK;
 
