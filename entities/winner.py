@@ -32,7 +32,7 @@ class Winner:
             connection = get_db_connection()
             cursor = connection.cursor()
 
-            query = "SELECT id, name, email, phrase, intentos, creado FROM winners"
+            query = "SELECT id, name, email, phrase, intentos, creado FROM winners ORDER BY intentos ASC, creado DESC"
             cursor.execute(query)
             results = cursor.fetchall()
 
@@ -52,14 +52,18 @@ class Winner:
         try:
             connection = get_db_connection()
             cursor = connection.cursor()
+            
             query = "DELETE FROM winners WHERE id = %s"
             cursor.execute(query, (id,))
             connection.commit()
             return True
+            
         except Exception as ex:
-            print("Error al eliminar el registro:", ex)
+            print("Error al eliminar:", ex)
             return False
         finally:
-            cursor.close()
-            connection.close()
+            if 'cursor' in locals() and cursor: cursor.close()
+            if 'connection' in locals() and connection: connection.close()
+
+    
         
