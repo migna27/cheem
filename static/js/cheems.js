@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("btn-set").addEventListener("click", saveWinner);
 
-    
+    let intentos = 1;
     let randomNumber = Math.floor(Math.random() * 14) + 1;
     
     console.log("Número aleatorio generado:", randomNumber);
@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const name = document.getElementById("name").value.trim();
         const email = document.getElementById("email").value.trim();
         const phrase = document.getElementById("phrase").value.trim();
+        const intentos = parseInt(document.getElementById("contador-intentos").innerText);
 
         if (!name || !email) {
             alert("Por favor, completa los campos obligatorios.");
@@ -57,7 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: JSON.stringify({
                     name: name,
                     email: email,
-                    phrase: phrase
+                    phrase: phrase,
+                    intentos: intentos
                 })
             })
             .then(response => {
@@ -67,14 +69,28 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .then(result => {
                 if (result.success) {
-                    alert("¡Datos guardados correctamente! Gracias por participar.");
+                    //alert("¡Datos guardados correctamente! Gracias por participar.");
+                    const modalElement = document.getElementById('modal-winner');
+                    const modalInstance = bootstrap.Modal.getInstance(modalElement);
+                    if (modalInstance) {
+                        modalInstance.hide();
+                        // B. Forzar el contador a 0 para que el reset lo deje en 1
+                    
+                    }
+                    
+                    
                 } else {
                     alert("Hubo un error al guardar tus datos. Por favor, intenta mas tarde.");
                 }
+                intentos = 0;
+                    resetGame();
             });
     }
 
     function resetGame() {
+        // incrementa el contador de intentos
+        intentos++;
+        document.getElementById("contador-intentos").innerText = intentos;
         // Reestablece las imagenes 
         imagenes.forEach(img => {
             // Asegúrate de que esta ruta sea correcta en tu proyecto
