@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("btn-set").addEventListener("click", saveWinner);
 
     let intentos = 1;
-    let randomNumber = Math.floor(Math.random() * 14) + 1;
+    let randomNumber = Math.floor(Math.random() * 15) + 1;
     
     console.log("Número aleatorio generado:", randomNumber);
     
